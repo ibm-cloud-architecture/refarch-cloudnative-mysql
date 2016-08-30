@@ -19,7 +19,7 @@ EOF
 
 # load-data.sql
 cat <<EOF >load-data.sql
-create database if not exists inventorydb;
+create database if not exists ${MYSQL_DATABASE};
 use inventorydb;
 create table if not exists items (
   id int not null auto_increment primary key,
@@ -36,7 +36,7 @@ ignore 1 rows;
 EOF
 
 # load data
-mysql -u dbuser -ppassword <load-data.sql
+mysql -u ${MYSQL_USER} -p${MYSQL_PASSWORD} <load-data.sql
 rm load-data.sql testdata
 echo "Data loaded to inventorydb.items."
 exit 0
