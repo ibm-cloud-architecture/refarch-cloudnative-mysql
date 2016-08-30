@@ -11,7 +11,6 @@ Clone git repository.
 ### Setup Inventory Database on Local MySQL Container
 1. Create MySQL container with database `inventorydb`. This database can be connected at `<docker-host-ipaddr/hostname>:3306` as `dbuser` using `password`.
     ```
-    # cd 
     # docker run --name mysql -v $PWD/scripts:/home/scripts -p 3306:3306 -e MYSQL_ROOT_PASSWORD=admin123 -e MYSQL_USER=dbuser -e MYSQL_PASSWORD=password -e MYSQL_DATABASE=inventorydb -w /home/scripts -d mysql:latest
     ```
 
