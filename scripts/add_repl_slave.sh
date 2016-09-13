@@ -8,7 +8,7 @@ SLAVE_PASSWORD=""
 
 _default_repl_user=repl
 
-function print_usage() {
+function print_usage {
 
     echo "$0 --slave-host=<master hostname> --slave-ip=<master_ip> [--repl-user=<replication user> [--repl-passwd=<replication password>]"
 }
@@ -53,7 +53,7 @@ if [ -z "${SLAVE_USER}" ]; then
 fi
 
 if [ -z "${SLAVE_PASSWORD}" ]; then
-    _default_repl_passwd=`cat /dev/urandom | tr -dc '$@#!%^&A-Za-z0-9' | head c16`
+    _default_repl_passwd=`cat /dev/urandom | tr -dc '$@#!%^&A-Za-z0-9' | head -c16`
     echo "Using generated replication password: ${_default_repl_passwd}"
     SLAVE_PASSWORD=${_default_repl_passwd}
 fi
