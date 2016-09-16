@@ -57,6 +57,16 @@ Inventory database is now setup in local container.
     # cf ic login
     ```
 
+5. Check that your organization has set a namespace.
+    ```
+    # cf ic namespace get
+    ```
+
+5. If there is no namespace set for your , then set a namespace.
+    ```
+    # cf ic namespace get
+    ```
+
 4. Tag and push mysql database server image to your Bluemix private registry namespace.
     ```
     # docker tag cloudnative/mysql registry.ng.bluemix.net/$(cf ic namespace get)/mysql:cloudnative
