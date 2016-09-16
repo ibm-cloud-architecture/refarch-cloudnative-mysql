@@ -3,7 +3,7 @@
 This database will be managed by refarch-cloudnative-micro-inventory microservice.
 
 ### Setup Inventory Database on Local MySQL Container
-1. Clone git repository. If you cloned the peer repositories **`./clonePeers.sh`**, then you should not do a *`git clone`* 
+1. Clone git repository. If you cloned the peer repositories **`./clonePeers.sh`**, then you should not do a *`git clone`*
     ```
     # git clone https://github.com/ibm-cloud-architecture/refarch-cloudnative-mysql.git
     # cd refarch-cloudnative-mysql
@@ -27,11 +27,11 @@ This database will be managed by refarch-cloudnative-micro-inventory microservic
     mysql> quit
     # exit
     ```
-   
+
 Inventory database is now setup in local container.
 
 ### Setup Inventory Database in IBM Bluemix container
-1. Clone git repository.
+1. Clone git repository. If you cloned the peer repositories **`./clonePeers.sh`**, then you should not do a *`git clone`*
     ```
     # git clone https://github.com/ibm-cloud-architecture/refarch-cloudnative-mysql.git
     ```
