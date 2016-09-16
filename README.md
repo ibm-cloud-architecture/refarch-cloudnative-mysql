@@ -3,10 +3,10 @@
 This database will be managed by refarch-cloudnative-micro-inventory microservice.
 
 ### Setup Inventory Database on Local MySQL Container
-1. Clone git repository.
+1. Clone git repository. If you cloned the peer repositories **`./clonePeers.sh`**, then you should not do a *`git clone`* 
     ```
     # git clone https://github.com/ibm-cloud-architecture/refarch-cloudnative-mysql.git
-    # cd refarch-cloudnative-sql
+    # cd refarch-cloudnative-mysql
     ```
 
 2. Create MySQL container with database `inventorydb`. This database can be connected at `<docker-host-ipaddr/hostname>:3306` as `dbuser` using `password`.
@@ -34,7 +34,11 @@ Inventory database is now setup in local container.
 1. Clone git repository.
     ```
     # git clone https://github.com/ibm-cloud-architecture/refarch-cloudnative-mysql.git
-    # cd refarch-cloudnative-sql
+    ```
+
+2. Change to the directory of the repository.
+    ```
+    # cd refarch-cloudnative-mysql
     ```
 
 2. Build docker image using the Dockerfile from repo.
@@ -55,6 +59,16 @@ Inventory database is now setup in local container.
 5. Log in to IBM Containers plugin.
     ```
     # cf ic login
+    ```
+
+5. Check that your organization has set a namespace.
+    ```
+    # cf ic namespace get
+    ```
+
+5. If there is no namespace set for your , then set a namespace.
+    ```
+    # cf ic namespace get
     ```
 
 4. Tag and push mysql database server image to your Bluemix private registry namespace.
