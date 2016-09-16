@@ -34,7 +34,11 @@ Inventory database is now setup in local container.
 1. Clone git repository.
     ```
     # git clone https://github.com/ibm-cloud-architecture/refarch-cloudnative-mysql.git
-    # cd refarch-cloudnative-sql
+    ```
+
+2. Change to the directory of the repository.
+    ```
+    # cd refarch-cloudnative-mysql
     ```
 
 2. Build docker image using the Dockerfile from repo.
