@@ -1,4 +1,3 @@
 [mysql]
-replicate-same-server-id = 0
 auto-increment-increment = 2
-auto-increment-offset = 2
+auto-increment-offset = 1
