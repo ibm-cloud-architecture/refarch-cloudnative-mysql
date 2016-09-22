@@ -13,3 +13,6 @@ report-host=$serverName
 report-port=3306
 port=3306
 slave-skip-errors=1062
+replicate-same-server-id=0
+auto-increment-increment=2
+auto-increment-offset=1
