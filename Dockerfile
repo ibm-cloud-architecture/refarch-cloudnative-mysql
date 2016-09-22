@@ -24,6 +24,7 @@ RUN pip install -r /tmp/requirements.txt
 RUN rm -f /tmp/requirements.txt
 
 COPY etc/mysql/mysql.conf.d/binlog.cnf /etc/mysql/mysql.conf.d/binlog.cnf
+COPY etc/mysql/conf.d/auto_increment.cnf /etc/mysql/conf.d/auto_increment.cnf
 
 ADD scripts /root/scripts
 WORKDIR /root/scripts
