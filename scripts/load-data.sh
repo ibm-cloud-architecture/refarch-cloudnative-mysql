@@ -36,7 +36,7 @@ ignore 1 rows;
 EOF
 
 # load data
-mysql -u ${MYSQL_USER} -p${MYSQL_PASSWORD} <load-data.sql
+mysql -u root -p${MYSQL_ROOT_PASSWORD} <load-data.sql
 rm load-data.sql testdata
 echo "Data loaded to inventorydb.items."
 exit 0
