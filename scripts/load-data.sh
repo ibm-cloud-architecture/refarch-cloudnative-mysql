@@ -17,10 +17,14 @@ id|name|description|price|img_alt|img
 13412|Selectric Typewriter|Unveiled in 1961, the revolutionary Selectric typewriter eliminated the need for conventional type bars and movable carriages by using an innovative typing element on a head-and-rocker assembly, which, in turn, was mounted on a small carrier to move from left to right while typing.|2199.99|Selectric Typewriter|/api/image/selectric.jpg
 EOF
 
+if [ -z "${MYSQL_DATABASE}" ]; then
+    MYSQL_DATABASE=inventorydb
+fi
+
 # load-data.sql
 cat <<EOF >load-data.sql
 create database if not exists ${MYSQL_DATABASE};
-use inventorydb;
+use ${MYSQL_DATABASE};
 create table if not exists items (
   id int not null auto_increment primary key,
   name varchar(100) not null,
@@ -35,8 +39,14 @@ fields terminated by '|'
 ignore 1 rows;
 EOF
 
+_password_opt="-p${MYSQL_ROOT_PASSWORD}"
+
+if [ -z "${MYSQL_ROOT_PASSWORD}" ]; then
+    _password_opt=""
+fi
+
 # load data
-mysql -u root -p${MYSQL_ROOT_PASSWORD} <load-data.sql
+mysql -u root ${_password_opt} <load-data.sql
 rm load-data.sql testdata
 echo "Data loaded to inventorydb.items."
 exit 0
