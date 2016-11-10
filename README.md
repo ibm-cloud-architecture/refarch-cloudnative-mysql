@@ -11,8 +11,14 @@ This database will be managed by refarch-cloudnative-micro-inventory microservic
 
 2. Create MySQL container with database `inventorydb`. This database can be connected at `<docker-host-ipaddr/hostname>:3306` as `dbuser` using `password`.
     ```
+    Linux/macOS:
     # docker run --name mysql -v $PWD/scripts:/home/scripts -p 3306:3306 -e MYSQL_ROOT_PASSWORD=admin123 -e MYSQL_USER=dbuser -e MYSQL_PASSWORD=password -e MYSQL_DATABASE=inventorydb -w /home/scripts -d mysql:latest
     ```
+    ```
+    Windows:
+    # docker run --name mysql -v %CD%\scripts:/home/scripts -p 3306:3306 -e MYSQL_ROOT_PASSWORD=admin123 -e MYSQL_USER=dbuser -e MYSQL_PASSWORD=password -e MYSQL_DATABASE=inventorydb -w /home/scripts -d mysql:latest
+    ```
+
 
 3. Create `items` table and load sample data.
     ```
@@ -78,7 +84,7 @@ Inventory database is now setup in local container.
     ```
 
 5. Create MySQL container with database `inventorydb`. This database can be connected at `<docker-host-ipaddr/hostname>:3306` as `dbuser` using `Pass4dbUs3R`.
-    
+
     _It is recommended to change the default passwords used here._
     ```
     # cf ic run -m 512 --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=Pass4Admin123 -e MYSQL_USER=dbuser -e MYSQL_PASSWORD=Pass4dbUs3R -e MYSQL_DATABASE=inventorydb registry.ng.bluemix.net/$(cf ic namespace get)/mysql:cloudnative
@@ -97,5 +103,5 @@ Inventory database is now setup in local container.
     mysql> quit
     # exit
     ```
-   
-Inventory database is now setup in IBM Bluemix Container. 
+
+Inventory database is now setup in IBM Bluemix Container.
