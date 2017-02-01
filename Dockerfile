@@ -18,7 +18,7 @@ RUN apt-get -y install curl python2.6
 RUN curl https://bootstrap.pypa.io/get-pip.py | python2.6
 
 RUN echo "http://cdn.mysql.com//Downloads/MySQLGUITools/mysql-utilities-1.6.4.tar.gz" > /tmp/requirements.txt
-RUN echo "http://cdn.mysql.com//Downloads/Connector-Python/mysql-connector-python-2.1.3.tar.gz" >> /tmp/requirements.txt
+RUN echo "http://cdn.mysql.com//Downloads/Connector-Python/mysql-connector-python-2.1.5.tar.gz" >> /tmp/requirements.txt
 
 RUN pip install -r /tmp/requirements.txt
 RUN rm -f /tmp/requirements.txt
