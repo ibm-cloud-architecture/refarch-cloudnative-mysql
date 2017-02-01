@@ -54,5 +54,5 @@ do
 done
 
 rm load-data.sql testdata
-printf "\n\nData loaded to inventorydb.items."
+printf "\n\nData loaded to inventorydb.items.\n\n"
 exit 0
